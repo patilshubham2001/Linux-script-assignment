@@ -1,18 +1,20 @@
 #!/bin/bash
 
 echo  Enter the number of days:
-read days
+read ndays                   #this line used to read input that user give
 
-echo Listing file older than $days days:
+echo printing file older than $ndays days:
 
-find / -type f -mtime +$days -exec ls -l {} \;
+find / -type f -mtime +$ndays -exec ls -l {} \;       #main logic for printing files
 
-echo "Do you want to continue? (yes/no)"
-read response
+echo "Do you want to continue? press (yes/no)"
+read resp
 
-if [ $response != "yes" ]; then
+if [ $resp != "yes" ]; then          #Here we apply condition like user press no then execute if block
         echo script terminated.
         exit 0
 fi
 
 echo "continue with script..."
+
+
